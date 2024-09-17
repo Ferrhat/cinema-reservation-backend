@@ -179,22 +179,22 @@ app.get('/api/v1/venues', (req, res) => {
     res.json(venues);
 });
 
-app.get('/api/v1/venue/1/seats', (req, res) => {
+app.get('/api/v1/venue/:venueId/seats', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.json(seats);
 });
 
-app.get('/api/v1/venue/1/screenings', (req, res) => {
+app.get('/api/v1/venue/:venueId/screenings', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.json(screenings);
 });
 
-app.post('/api/v1/venue/1/screening/1/reserve', (req, res) => {
+app.post('/api/v1/venue/:venueId/screening/:screeningId/reserve', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json({ message: 'Reservation successful' });
 });
 
-app.options('/api/v1/venue/1/screening/1/reserve', (req, res) => {
+app.options('/api/v1/venue/:venueId/screening/:screeningId/reserve', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'POST');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
